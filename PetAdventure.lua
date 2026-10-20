@@ -1,6 +1,10 @@
-print("Pet Adventure cargado")
+local UI = loadstring(game:HttpGet(getgenv().HUB_BASE .. "UI.lua"))()
+local ventana = UI.CrearVentana("Pet Adventure")
 
-local Players = game:GetService("Players")
-local jugador = Players.LocalPlayer
+ventana:AddButton("Saludar", function()
+    print("Hola, " .. game:GetService("Players").LocalPlayer.Name)
+end)
 
-print("Hola, " .. jugador.Name)
+ventana:AddToggle("Prueba", function(estado)
+    print("Prueba:", estado)
+end)
